@@ -8,7 +8,7 @@ contract YikeCoin is ERC20 {
     uint256 public prize;
 
     constructor(string memory _phrase1, string memory _phrase2) ERC20("YikeCoin", "YIKE") {
-        _mint(address(this), 1000);
+        _mint(address(this), 1000 * (10 ** uint256(decimals())));
         prize = totalSupply() / 1000;
         answer = _hash(_phrase1, _phrase2);
     }
